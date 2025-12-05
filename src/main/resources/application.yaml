@@ -1,0 +1,56 @@
+server:
+  port: ${PORT:8080}
+  address: 0.0.0.0
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+#    url: jdbc:postgresql://ep-icy-rain-a1g2wy54-pooler.ap-southeast-1.aws.neon.tech:5432/neondb?sslmode=require&channelBinding=require
+#    username: neondb_owner
+#    password: npg_xboBup2r3Eil
+    url: jdbc:mysql://localhost:3306/english-center
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  #    show-sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: tutruongno1@gmail.com
+    password: "mlwo tnqu fevq jkgk"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            trust: smtp.gmail.com
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+  main:
+    banner-mode: off
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+#logging:
+#  level:
+#    root: warn
+
+jwt:
+  signerKey: ${SIGNER_KEY:1TjXchw5FloESb63Kc+DFhTARvpWL4jUGCwfGWxuG5SIf/1y/LgJxHnMqaF6A/ij}
+  access-exp: 86400 # in second
+  refresh-exp: 604800 # in seconds
+
+cloudinary:
+  cloud-name: ${CLOUD_NAME:dsgftzhzt}
+  api-key: ${API_KEY:363524259282383}
+  api-secret: ${API_SECRET:Fgg6RVnlQNtIe1cfAgg5sKORENw}
