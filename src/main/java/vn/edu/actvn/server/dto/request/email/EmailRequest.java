@@ -15,5 +15,4 @@ public class EmailRequest {
     private String text;
     private String htmlText;
     private boolean isHtml;
-
 }

@@ -128,6 +128,10 @@ public class ClassService {
         }
 
         List<Student> students = studentRepository.findAllById(studentIds);
+        if (students.size() != studentIds.size()) {
+            throw new AppException(ErrorCode.USER_NOT_EXISTED);
+        }
+
         if (!students.isEmpty()) {
             students.forEach(s-> {
                 ClassDiscount classDiscount = ClassDiscount.builder()
@@ -136,10 +140,6 @@ public class ClassService {
                         .build();
                 s.getClassDiscounts().add(classDiscount);
             });
-        }
-
-        if (students.size() != studentIds.size()) {
-            throw new AppException(ErrorCode.USER_NOT_EXISTED);
         }
 
         students.removeIf(s -> entityClass.getStudents().contains(s));

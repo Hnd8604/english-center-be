@@ -16,6 +16,10 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+#  output:
+#    ansi:
+#      enabled: ALWAYS
+
   #    show-sql: true
   mail:
     host: smtp.gmail.com

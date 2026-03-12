@@ -31,6 +31,24 @@ public interface AttendanceRepository extends JpaRepository<Attendance, String> 
             Pageable pageable);
 
     List<Attendance> findByEntityClass_ClassIdAndDateBetween(String classId, LocalDate start, LocalDate end);
+//    @Query("""
+//    SELECT a
+//    FROM Attendance a
+//    WHERE a.entityClass.classId = :classId
+//      AND a.date BETWEEN :start AND :end
+//    """)
+//    List<Attendance> findAttendances(String classId, LocalDate start, LocalDate end);
 
     long countByEntityClass_ClassIdAndStudentAttendances_StudentIdAndStudentAttendances_Status(String classId, String studentId, Attendance.Status status);
+//    @Query("""
+//    SELECT COUNT(a)
+//    FROM Attendance a
+//    JOIN a.studentAttendances sa
+//    WHERE a.entityClass.classId = :classId
+//      AND sa.studentId = :studentId
+//      AND sa.status = :status
+//    """)
+//    long countStudentStatus(String classId, String studentId, Attendance.Status status);
+//
+
 }

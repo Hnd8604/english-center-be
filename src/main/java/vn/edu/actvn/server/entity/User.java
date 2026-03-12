@@ -35,10 +35,10 @@ public class User {
     String password;
     String fullName;
 
-////    @Formula("SUBSTRING_INDEX(full_name, ' ', -1)") // This is MySQL syntax, not supported by JPA/Hibernate
-//    @Setter(AccessLevel.NONE)
+    @Formula("SUBSTRING_INDEX(full_name, ' ', -1)") // This is MySQL syntax, not supported by JPA/Hibernate
+    @Setter(AccessLevel.NONE)
 //    @Formula("reverse(split_part(reverse(full_name), ' ', 1))") // PostgreSQL syntax for last name extraction
-//    String lastName;
+    String lastName;
 
     LocalDate dob;
     String email;

@@ -27,7 +27,6 @@ import static lombok.AccessLevel.PRIVATE;
 @RequiredArgsConstructor
 @FieldDefaults(level = PRIVATE, makeFinal = true)
 public class AttendanceService {
-
     AttendanceRepository attendanceRepository;
     AttendanceMapper attendanceMapper;
     ClassService classService;
