@@ -6,12 +6,9 @@ server:
 
 spring:
   datasource:
-#    url: jdbc:postgresql://ep-icy-rain-a1g2wy54-pooler.ap-southeast-1.aws.neon.tech:5432/neondb?sslmode=require&channelBinding=require
-#    username: neondb_owner
-#    password: npg_xboBup2r3Eil
     url: jdbc:mysql://localhost:3306/english-center
     username: root
-    password: root
+    password: your_database_password # Thay bằng password của bạn
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -19,13 +16,12 @@ spring:
   output:
     ansi:
       enabled: ALWAYS
-
       show-sql: true
   mail:
     host: smtp.gmail.com
     port: 587
-    username: tutruongno1@gmail.com
-    password: "mvfa fffh ecyp mtuy"
+    username: your_email@gmail.com # Thay bằng email của bạn
+    password: "your_app_password" # Thay bằng App Password của bạn
     properties:
       mail:
         smtp:
@@ -50,11 +46,11 @@ spring:
 #    root: warn
 
 jwt:
-  signerKey: ${SIGNER_KEY:1TjXchw5FloESb63Kc+DFhTARvpWL4jUGCwfGWxuG5SIf/1y/LgJxHnMqaF6A/ij}
+  signerKey: ${SIGNER_KEY:your_jwt_secret_key_here}
   access-exp: 86400 # in second
   refresh-exp: 604800 # in seconds
 
 cloudinary:
-  cloud-name: ${CLOUD_NAME:dsgftzhzt}
-  api-key: ${API_KEY:991924558367536}
-  api-secret: ${API_SECRET:HR2QU9_z_Bzvk4lxaoAR_U69dTQ}
+  cloud-name: ${CLOUD_NAME:your_cloud_name}
+  api-key: ${API_KEY:your_api_key}
+  api-secret: ${API_SECRET:your_api_secret}
